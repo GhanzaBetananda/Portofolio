@@ -1,129 +1,205 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState } from "react";
+import diriImg from "./images/diri.png";
 import {
-  Mail, Phone, MapPin, Linkedin, ArrowUpRight, Menu, X,
-  Database, Terminal, GraduationCap, ChevronRight
-} from 'lucide-react';
+  Mail,
+  Phone,
+  MapPin,
+  Linkedin,
+  ArrowUpRight,
+  Menu,
+  X,
+  Database,
+  Terminal,
+  GraduationCap,
+  ChevronRight,
+  Image,
+} from "lucide-react";
+// Import gambar untuk projects
+import bibitani1 from "./images/b1.png";
+import bibitani2 from "./images/b2.jpg";
+import bibitani3 from "./images/b3.png";
+import bibitani4 from "./images/b4.png";
+import bibitani5 from "./images/b5.png";
+import diskominfo1 from "./images/d1.png";
+import diskominfo2 from "./images/d2.png";
+import diskominfo3 from "./images/d3.png";
+import diskominfo4 from "./images/d4.png";
+import diskominfo5 from "./images/d5.png";
+import basarnas1 from "./images/basarnas1.png";
+import basarnas2 from "./images/basarnas2.png";
+import basarnas3 from "./images/basarnas3.jpeg";
+import basarnas4 from "./images/basarnas4.jpeg";
+import bimbel1 from "./images/bimbel1.png";
+import bimbel2 from "./images/bimbel2.jpeg";
+import bimbel3 from "./images/bimbel3.png";
+import bimbel4 from "./images/bimbel4.png";
+import seal1 from "./images/seal1.png";
+import seal2 from "./images/seal2.png";
+import seal3 from "./images/seal3.png";
+import seal4 from "./images/seal4.png";
+import seal5 from "./images/seal5.png";
+import karir1 from "./images/karir1.png";
+import karir2 from "./images/karir2.png";
+import karir3 from "./images/karir3.png";
+import karir4 from "./images/karir4.png";
+import karir5 from "./images/karir5.png";
+import pc1 from "./images/pc1.jpg";
+import pc2 from "./images/pc2.jpg";
+import pc3 from "./images/pc3.jpg";
+import pc4 from "./images/pc4.png";
+import pc5 from "./images/pc5.jpeg";
 
 /* ----------------------------- DATA ----------------------------- */
 
 const PROFILE = {
-  name: 'Ghanza Betananda Dilva',
-  role: 'Data Analyst & Data Scientist',
-  location: 'Jember, East Java, Indonesia',
-  phone: '+62 859-3008-8301',
-  email: 'ghanzabeta212@gmail.com',
-  linkedin: 'linkedin.com/in/ghanzabetananda',
-  linkedinUrl: 'http://www.linkedin.com/in/ghanzabetananda',
+  name: "Ghanza Betananda Dilva",
+  role: "Data Analyst & Data Scientist",
+  location: "Banyuwangi, East Java, Indonesia",
+  phone: "+62 859-3008-8301",
+  email: "ghanzabeta212@gmail.com",
+  linkedin: "linkedin.com/in/ghanzabetananda",
+  linkedinUrl: "http://www.linkedin.com/in/ghanzabetananda",
   bio: `Data Analyst and Data Scientist with hands-on experience in data analysis, data visualization, machine learning, and data preprocessing. Proficient in transforming complex datasets into actionable insights using Python, SQL, Tableau, and statistical analysis.`,
 };
 
 const STATS = [
-  { key: 'gpa', label: 'GPA', value: '3.91', unit: '/4.00' },
-  { key: 'tables', label: 'db_tables_cleansed', value: '260', unit: '+' },
-  { key: 'regions', label: 'regencies_standardized', value: '38', unit: '' },
-  { key: 'projects', label: 'analytics_projects', value: '20', unit: '+' },
-  { key: 'students', label: 'students_mentored', value: '200', unit: '+' },
-  { key: 'modules', label: 'dashboard_modules_built', value: '6', unit: '' },
+  { key: "gpa", label: "GPA", value: "3.91", unit: "/4.00" },
+  { key: "tables", label: "db_tables_cleansed", value: "260", unit: "+" },
+  { key: "regions", label: "regencies_standardized", value: "38", unit: "" },
+  { key: "projects", label: "analytics_projects", value: "20", unit: "+" },
+  { key: "students", label: "students_mentored", value: "200", unit: "+" },
+  { key: "modules", label: "dashboard_modules_built", value: "6", unit: "" },
 ];
 
 const EXPERIENCE = [
   {
-    org: 'Diskominfo Banyuwangi',
-    role: 'Front-End Developer Intern',
-    place: 'Banyuwangi, ID',
-    date: 'Feb 2025 — Jun 2025',
+    org: "Diskominfo Banyuwangi",
+    role: "Front-End Developer Intern",
+    place: "Banyuwangi, ID",
+    date: "Feb 2025 — Jun 2025",
     bullets: [
-      'Developed an analytics dashboard using React.js, HTML, and Tailwind CSS, integrated with a MySQL database to monitor crowd density and waste accumulation detection results.',
-      'Built 6 integrated dashboard modules and 3 role-based user interfaces covering account management, analytics monitoring, historical tracking, and reporting.',
+      "Developed an analytics dashboard using React.js, HTML, and Tailwind CSS, integrated with a MySQL database to monitor crowd density and waste accumulation detection results.",
+      "Built 6 integrated dashboard modules and 3 role-based user interfaces covering account management, analytics monitoring, historical tracking, and reporting.",
     ],
-    tags: ['React.js', 'Tailwind CSS', 'MySQL'],
+    tags: ["React.js", "Tailwind CSS", "MySQL"],
+    images: [diskominfo1, diskominfo2, diskominfo3, diskominfo4, diskominfo5],
   },
   {
-    org: 'Social Economic Accelerator Lab (SEAL)',
-    role: 'Data Scientist Intern',
-    place: 'Surabaya, ID',
-    date: 'Feb 2025 — Jun 2025',
+    org: "Social Economic Accelerator Lab (SEAL)",
+    role: "Data Scientist Intern",
+    place: "Surabaya, ID",
+    date: "Feb 2025 — Jun 2025",
     bullets: [
-      'Contributed to the Open Data Jatim platform for Diskominfo Jawa Timur, improving data quality and analytics workflows for the provincial open data portal.',
-      'Built data cleansing scripts in Python to standardize master data across 38 regencies and cities.',
-      'Cleansed 260 database tables in Google Colab, connected via DBeaver, to standardize data for downstream analytics.',
+      "Contributed to the Open Data Jatim platform for Diskominfo Jawa Timur, improving data quality and analytics workflows for the provincial open data portal.",
+      "Built data cleansing scripts in Python to standardize master data across 38 regencies and cities.",
+      "Cleansed 260 database tables in Google Colab, connected via DBeaver, to standardize data for downstream analytics.",
     ],
-    tags: ['Python', 'Google Colab', 'DBeaver'],
+    tags: ["Python", "Google Colab", "DBeaver"],
+    images: [seal1, seal2, seal3, seal4, seal5],
   },
   {
-    org: 'Smart Agriculture Lab, UNEJ',
-    role: 'Assistant Lecturer',
-    place: 'Jember, ID',
-    date: 'Jul 2024 — Dec 2025',
+    org: "Smart Agriculture Lab, UNEJ",
+    role: "Assistant Lecturer",
+    place: "Jember, ID",
+    date: "Jul 2024 — Dec 2025",
     bullets: [
-      'Mentored 6 Software Development (PPL) classes of 200+ undergraduate students across 6 project teams.',
-      'Delivered instruction in SDLC practices, UML modeling (Use Case, Activity, Sequence, Class, ER Diagrams), and Software Requirements Specification (SRS).',
+      "Mentored 6 Software Development (PPL) classes of 200+ undergraduate students across 6 project teams.",
+      "Delivered instruction in SDLC practices, UML modeling (Use Case, Activity, Sequence, Class, ER Diagrams), and Software Requirements Specification (SRS).",
     ],
-    tags: ['SDLC', 'UML', 'Mentoring'],
+    tags: ["SDLC", "UML", "Mentoring"],
+    images: [pc1, pc2, pc3, pc4, pc5],
   },
   {
-    org: 'MSIB Batch 7 — Karier.mu',
-    role: 'Data Analyst Independent Study',
-    place: 'Jakarta, ID',
-    date: 'Sep 2024 — Dec 2024',
+    org: "MSIB Batch 7 — Karier.mu",
+    role: "Data Analyst Independent Study",
+    place: "Jakarta, ID",
+    date: "Sep 2024 — Dec 2024",
     bullets: [
-      'Completed an intensive Data Analyst program, delivering 20+ hands-on analytics projects using Python, SQL, Excel, and Tableau.',
-      'Performed end-to-end workflows: data cleaning, EDA, visualization, dashboarding, and business insight presentation.',
+      "Completed an intensive Data Analyst program, delivering 20+ hands-on analytics projects using Python, SQL, Excel, and Tableau.",
+      "Performed end-to-end workflows: data cleaning, EDA, visualization, dashboarding, and business insight presentation.",
     ],
-    tags: ['Python', 'SQL', 'Tableau', 'Excel'],
+    tags: ["Python", "SQL", "Tableau", "Excel"],
+    images: [karir1, karir2, karir3, karir4, karir5],
   },
 ];
 
 const LEADERSHIP = [
   {
-    org: 'Robo Clash, UNEJ',
-    role: 'Head of Equipment Division',
-    date: 'Sep — Nov 2024',
-    desc: 'Assembled and tested competition robots; managed arena setup, component inventory, and technical logistics.',
+    org: "Robo Clash, UNEJ",
+    role: "Head of Equipment Division",
+    date: "Sep — Nov 2024",
+    desc: "Assembled and tested competition robots; managed arena setup, component inventory, and technical logistics.",
   },
   {
-    org: 'Smart Agriculture Lab, UNEJ',
-    role: 'Public Relations Staff',
-    date: 'Jul 2024 — Dec 2025',
-    desc: 'Managed lab communications, promotional content, and coordinated events and external collaborations.',
+    org: "Smart Agriculture Lab, UNEJ",
+    role: "Public Relations Staff",
+    date: "Jul 2024 — Dec 2025",
+    desc: "Managed lab communications, promotional content, and coordinated events and external collaborations.",
   },
   {
-    org: 'Karier.mu',
-    role: 'Tribe MSIB Batch 7',
-    date: 'Sep — Dec 2024',
-    desc: 'Liaised between Kemendikbudristek and MSIB participants; coordinated 2 virtual town halls and produced the batch farewell video.',
+    org: "Karier.mu",
+    role: "Tribe MSIB Batch 7",
+    date: "Sep — Dec 2024",
+    desc: "Liaised between Kemendikbudristek and MSIB participants; coordinated 2 virtual town halls and produced the batch farewell video.",
   },
 ];
 
 const PROJECTS = [
   {
-    name: 'E-MON SAR Vehicle',
-    desc: 'Web-based vehicle inspection system digitizing daily inspection workflows for the BASARNAS Banyuwangi operational fleet — role-based forms, automated maintenance records, and real-time reporting across 5 vehicle categories and 20+ checkpoints.',
-    tags: ['Google Apps Script', 'Google Sheets'],
+    name: "E-MON SAR Vehicle",
+    desc: "Web-based vehicle inspection system digitizing daily inspection workflows for the BASARNAS Banyuwangi operational fleet — role-based forms, automated maintenance records, and real-time reporting across 5 vehicle categories and 20+ checkpoints.",
+    tags: ["Google Apps Script", "Google Sheets"],
+    images: [basarnas1, basarnas2, basarnas3, basarnas4],
   },
   {
-    name: 'Bimbel Intisari',
-    desc: 'CAT BKN preparation platform for civil service exam candidates — online tryout simulations, authentication, and score management across 5 tryout modules with automated scoring and an admin dashboard.',
-    tags: ['React.js', 'Laravel', 'PostgreSQL'],
+    name: "Bimbel Intisari",
+    desc: "CAT BKN preparation platform for civil service exam candidates — online tryout simulations, authentication, and score management across 5 tryout modules with automated scoring and an admin dashboard.",
+    tags: ["React.js", "Laravel", "PostgreSQL"],
+    images: [bimbel1, bimbel2, bimbel3, bimbel4],
+  },
+  {
+    name: "Bibitani",
+    desc: "Interactive platform designed to support the distribution of horticultural seedling assistance to farmer groups in Jember Regency, facilitating collaboration between the TPHP Department and farmer groups. I contributed as a UI/UX Designer, creating the interface in Figma and developing Use Case, BPMN, Class, and Sequence Diagrams.",
+    tags: ["Figma", "UI/UX Design", "UML", "BPMN"],
+    images: [bibitani1, bibitani2, bibitani3, bibitani4],
   },
 ];
 
 const SKILLS = [
-  { cat: 'Languages', items: ['Python', 'SQL', 'JavaScript', 'PHP'] },
-  { cat: 'Analytics & ML', items: ['Pandas', 'NumPy', 'Scikit-learn', 'EDA', 'Feature Engineering', 'Statistical Analysis'] },
-  { cat: 'Visualization', items: ['Tableau', 'Power BI', 'Matplotlib', 'Excel'] },
-  { cat: 'Databases', items: ['MySQL', 'PostgreSQL'] },
-  { cat: 'Web Development', items: ['React.js', 'Laravel', 'Tailwind CSS', 'HTML/CSS'] },
-  { cat: 'Tools', items: ['Git', 'GitHub', 'Google Colab', 'DBeaver', 'VS Code', 'Trello'] },
+  { cat: "Languages", items: ["Python", "SQL", "JavaScript", "PHP"] },
+  {
+    cat: "Analytics & ML",
+    items: [
+      "Pandas",
+      "NumPy",
+      "Scikit-learn",
+      "EDA",
+      "Feature Engineering",
+      "Statistical Analysis",
+    ],
+  },
+  {
+    cat: "Visualization",
+    items: ["Tableau", "Power BI", "Matplotlib", "Excel"],
+  },
+  { cat: "Databases", items: ["MySQL", "PostgreSQL"] },
+  {
+    cat: "Web Development",
+    items: ["React.js", "Laravel", "Tailwind CSS", "HTML/CSS"],
+  },
+  {
+    cat: "Tools",
+    items: ["Git", "GitHub", "Google Colab", "DBeaver", "VS Code", "Trello"],
+  },
 ];
 
 const NAV = [
-  { id: 'about', label: 'About' },
-  { id: 'experience', label: 'Experience' },
-  { id: 'projects', label: 'Projects' },
-  { id: 'skills', label: 'Skills' },
-  { id: 'education', label: 'Education' },
-  { id: 'contact', label: 'Contact' },
+  { id: "about", label: "About" },
+  { id: "experience", label: "Experience" },
+  { id: "projects", label: "Projects" },
+  { id: "skills", label: "Skills" },
+  { id: "education", label: "Education" },
+  { id: "contact", label: "Contact" },
 ];
 
 /* ----------------------------- UI PARTS ----------------------------- */
@@ -142,7 +218,9 @@ function SectionHeading({ index, title, subtitle }) {
     <div className="flex items-end justify-between gap-6 mb-12 border-b border-line pb-6">
       <div>
         <span className="font-mono text-xs text-muted">{index}</span>
-        <h2 className="font-display text-3xl sm:text-4xl font-semibold text-ink mt-1">{title}</h2>
+        <h2 className="font-display text-3xl sm:text-4xl font-semibold text-ink mt-1">
+          {title}
+        </h2>
       </div>
       {subtitle && (
         <p className="hidden sm:block font-mono text-xs text-muted max-w-[220px] text-right leading-relaxed">
@@ -161,55 +239,18 @@ function Chip({ children }) {
   );
 }
 
-/* Signature hero element: a "query console" reflecting the subject's own world (SQL / dashboards) */
-function QueryConsole() {
-  const [visibleRows, setVisibleRows] = useState(0);
-
-  useEffect(() => {
-    const t = setInterval(() => {
-      setVisibleRows((v) => (v < STATS.length ? v + 1 : v));
-    }, 140);
-    return () => clearInterval(t);
-  }, []);
-
+/* Signature hero element: a portrait/photo pulled from src/images,
+   imported as a module so bundlers (Vite/CRA) resolve and hash it correctly. */
+function HeroImage() {
   return (
-    <div className="rounded-xl bg-console text-white overflow-hidden shadow-[0_20px_60px_-20px_rgba(15,17,21,0.5)] border border-black/10">
-      <div className="flex items-center gap-2 px-4 py-3 border-b border-white/10">
-        <span className="w-2.5 h-2.5 rounded-full bg-[#FF5F57]" />
-        <span className="w-2.5 h-2.5 rounded-full bg-[#FEBC2E]" />
-        <span className="w-2.5 h-2.5 rounded-full bg-[#28C840]" />
-        <span className="ml-3 font-mono text-[11px] text-white/40">profile_stats.sql</span>
-      </div>
-      <div className="p-5 font-mono text-[12.5px] leading-relaxed">
-        <p className="text-white/40">-- query current profile signals</p>
-        <p>
-          <span className="text-[#5CA0FF]">SELECT</span> gpa, tables_cleansed, projects
-        </p>
-        <p>
-          <span className="text-[#5CA0FF]">FROM</span> ghanza_dilva.profile
-        </p>
-        <p>
-          <span className="text-[#5CA0FF]">WHERE</span> role = <span className="text-[#8BD17C]">'data_analyst'</span>;
-        </p>
-        <div className="mt-4 border border-white/10 rounded-lg overflow-hidden">
-          <div className="grid grid-cols-[1fr_auto] bg-white/5 px-3 py-2 text-white/40 text-[11px] uppercase tracking-wide">
-            <span>field</span>
-            <span>value</span>
-          </div>
-          {STATS.slice(0, visibleRows).map((s) => (
-            <div
-              key={s.key}
-              className="grid grid-cols-[1fr_auto] px-3 py-2 border-t border-white/10 items-center"
-            >
-              <span className="text-white/60">{s.label}</span>
-              <span className="text-white">
-                <span className="text-[#8BD17C] font-semibold">{s.value}</span>
-                <span className="text-white/40">{s.unit}</span>
-              </span>
-            </div>
-          ))}
-        </div>
-        <p className="mt-4 text-white/30">{'// '}{visibleRows} rows returned</p>
+    <div className="rounded-xl overflow-hidden shadow-[0_20px_60px_-20px_rgba(15,17,21,0.15)]">
+      <div className="relative aspect-[2/3] w-full max-w-[329px] mx-auto">
+        <img
+          src={diriImg}
+          alt="Ghanza Betananda Dilva"
+          className="w-full h-full object-cover"
+          loading="lazy"
+        />
       </div>
     </div>
   );
@@ -223,13 +264,13 @@ export default function App() {
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 8);
-    window.addEventListener('scroll', onScroll);
-    return () => window.removeEventListener('scroll', onScroll);
+    window.addEventListener("scroll", onScroll);
+    return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
   const scrollTo = (id) => {
     setMenuOpen(false);
-    document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' });
+    document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
   };
 
   return (
@@ -237,18 +278,20 @@ export default function App() {
       {/* NAV */}
       <header
         className={`fixed top-0 inset-x-0 z-50 transition-all ${
-          scrolled ? 'bg-white/90 backdrop-blur border-b border-line' : 'bg-transparent'
+          scrolled
+            ? "bg-white/90 backdrop-blur border-b border-line"
+            : "bg-transparent"
         }`}
       >
         <div className="max-w-6xl mx-auto px-6 sm:px-8 h-16 flex items-center justify-between">
           <button
-            onClick={() => scrollTo('top')}
+            onClick={() => scrollTo("top")}
             className="font-display font-semibold tracking-tight text-lg flex items-center gap-2"
           >
             <span className="w-7 h-7 rounded-md bg-ink text-white grid place-items-center font-mono text-xs">
               GD
             </span>
-            <span className="hidden sm:inline">ghanza.dilva</span>
+            <span className="hidden sm:inline">ghanza/betananda/dilva</span>
           </button>
 
           <nav className="hidden md:flex items-center gap-8">
@@ -269,7 +312,11 @@ export default function App() {
             </a>
           </nav>
 
-          <button className="md:hidden" onClick={() => setMenuOpen((v) => !v)} aria-label="Toggle menu">
+          <button
+            className="md:hidden"
+            onClick={() => setMenuOpen((v) => !v)}
+            aria-label="Toggle menu"
+          >
             {menuOpen ? <X size={22} /> : <Menu size={22} />}
           </button>
         </div>
@@ -305,7 +352,9 @@ export default function App() {
 
             <div className="mt-8 flex flex-wrap items-center gap-3">
               <a
-                href={`mailto:${PROFILE.email}`}
+                href={`https://mail.google.com/mail/?view=cm&fs=1&to=${encodeURIComponent(PROFILE.email)}`}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 bg-ink text-white font-mono text-[12px] uppercase tracking-wide px-5 py-3 rounded-full hover:bg-accent transition-colors"
               >
                 <Mail size={14} /> Email me
@@ -321,12 +370,16 @@ export default function App() {
             </div>
 
             <div className="mt-10 flex flex-wrap gap-x-8 gap-y-2 font-mono text-xs text-muted">
-              <span className="flex items-center gap-1.5"><MapPin size={13} /> {PROFILE.location}</span>
-              <span className="flex items-center gap-1.5"><Phone size={13} /> {PROFILE.phone}</span>
+              <span className="flex items-center gap-1.5">
+                <MapPin size={13} /> {PROFILE.location}
+              </span>
+              <span className="flex items-center gap-1.5">
+                <Phone size={13} /> {PROFILE.phone}
+              </span>
             </div>
           </div>
 
-          <QueryConsole />
+          <HeroImage />
         </div>
       </section>
 
@@ -339,29 +392,69 @@ export default function App() {
         />
         <div className="space-y-0">
           {EXPERIENCE.map((exp, i) => (
-            <div
-              key={exp.org}
-              className="grid sm:grid-cols-[160px_1fr] gap-4 sm:gap-10 py-8 border-b border-line group"
-            >
-              <div className="font-mono text-xs text-muted pt-1">{exp.date}</div>
-              <div>
-                <div className="flex items-baseline gap-2 flex-wrap">
-                  <h3 className="font-display text-xl font-semibold text-ink">{exp.org}</h3>
-                  <span className="text-muted text-sm">— {exp.role}</span>
+            <div key={exp.org} className="py-8 border-b border-line group">
+              <div className="grid sm:grid-cols-[160px_1fr] gap-4 sm:gap-10">
+                <div className="font-mono text-xs text-muted pt-1">
+                  {exp.date}
                 </div>
-                <p className="font-mono text-[11px] text-muted mt-1">{exp.place}</p>
-                <ul className="mt-4 space-y-2">
-                  {exp.bullets.map((b, j) => (
-                    <li key={j} className="flex gap-2 text-sm text-ink/80 leading-relaxed">
-                      <ChevronRight size={14} className="mt-1 shrink-0 text-accent" />
-                      {b}
-                    </li>
-                  ))}
-                </ul>
-                <div className="mt-4 flex flex-wrap gap-2">
-                  {exp.tags.map((t) => <Chip key={t}>{t}</Chip>)}
+                <div>
+                  <div className="flex items-baseline gap-2 flex-wrap">
+                    <h3 className="font-display text-xl font-semibold text-ink">
+                      {exp.org}
+                    </h3>
+                    <span className="text-muted text-sm">— {exp.role}</span>
+                  </div>
+                  <p className="font-mono text-[11px] text-muted mt-1">
+                    {exp.place}
+                  </p>
+                  <ul className="mt-4 space-y-2">
+                    {exp.bullets.map((b, j) => (
+                      <li
+                        key={j}
+                        className="flex gap-2 text-sm text-ink/80 leading-relaxed"
+                      >
+                        <ChevronRight
+                          size={14}
+                          className="mt-1 shrink-0 text-accent"
+                        />
+                        {b}
+                      </li>
+                    ))}
+                  </ul>
+                  <div className="mt-4 flex flex-wrap gap-2">
+                    {exp.tags.map((t) => (
+                      <Chip key={t}>{t}</Chip>
+                    ))}
+                  </div>
                 </div>
               </div>
+
+              {/* 5 foto dalam satu baris - persegi 1:1 */}
+              {exp.images && (
+                <div className="mt-6">
+                  <div className="flex justify-center items-center gap-3 sm:gap-4">
+                    {exp.images.map((img, idx) => (
+                      <div
+                        key={idx}
+                        className="relative aspect-square w-14 sm:w-20 md:w-24 rounded-lg overflow-hidden border border-line hover:border-accent transition-colors group/image flex-shrink-0"
+                      >
+                        <img
+                          src={img}
+                          alt={`${exp.org} documentation ${idx + 1}`}
+                          className="w-full h-full object-cover transition-transform duration-300 group-hover/image:scale-105"
+                          loading="lazy"
+                        />
+                        <div className="absolute bottom-1 right-1 bg-black/60 backdrop-blur text-white text-[8px] sm:text-[10px] px-1.5 py-0.5 rounded font-mono">
+                          {idx + 1}
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                  <p className="text-center font-mono text-[10px] text-muted mt-2">
+                    Project documentation
+                  </p>
+                </div>
+              )}
             </div>
           ))}
         </div>
@@ -369,21 +462,54 @@ export default function App() {
 
       {/* PROJECTS */}
       <section id="projects" className="py-24 px-6 sm:px-8 max-w-6xl mx-auto">
-        <SectionHeading index="02 — BUILDS" title="Projects" subtitle="Applied systems shipped end to end" />
-        <div className="grid sm:grid-cols-2 gap-6">
+        <SectionHeading
+          index="02 — BUILDS"
+          title="Projects"
+          subtitle="Applied systems shipped end to end"
+        />
+        <div className="space-y-10">
           {PROJECTS.map((p) => (
             <div
               key={p.name}
-              className="p-7 rounded-xl border border-line bg-surface hover:border-accent transition-colors"
+              className="grid lg:grid-cols-[1fr_1fr] gap-8 items-start"
             >
-              <div className="flex items-center justify-between mb-4">
-                <Database size={18} className="text-accent" />
-                <ArrowUpRight size={16} className="text-muted" />
+              {/* Card kiri */}
+              <div className="p-7 rounded-xl border border-line bg-surface hover:border-accent transition-colors">
+                <div className="flex items-center justify-between mb-4">
+                  <Database size={18} className="text-accent" />
+                  <ArrowUpRight size={16} className="text-muted" />
+                </div>
+                <h3 className="font-display text-lg font-semibold text-ink">
+                  {p.name}
+                </h3>
+                <p className="mt-3 text-sm text-ink/70 leading-relaxed">
+                  {p.desc}
+                </p>
+                <div className="mt-5 flex flex-wrap gap-2">
+                  {p.tags.map((t) => (
+                    <Chip key={t}>{t}</Chip>
+                  ))}
+                </div>
               </div>
-              <h3 className="font-display text-lg font-semibold text-ink">{p.name}</h3>
-              <p className="mt-3 text-sm text-ink/70 leading-relaxed">{p.desc}</p>
-              <div className="mt-5 flex flex-wrap gap-2">
-                {p.tags.map((t) => <Chip key={t}>{t}</Chip>)}
+
+              {/* Gallery foto kanan - 4 images in 2x2 grid */}
+              <div className="grid grid-cols-2 gap-3">
+                {p.images.map((img, idx) => (
+                  <div
+                    key={idx}
+                    className="relative aspect-video rounded-lg overflow-hidden bg-surface border border-line hover:border-accent transition-colors group/image"
+                  >
+                    <img
+                      src={img}
+                      alt={`${p.name} screenshot ${idx + 1}`}
+                      className="w-full h-full object-cover transition-transform duration-300 group-hover/image:scale-105"
+                      loading="lazy"
+                    />
+                    <div className="absolute top-2 right-2 bg-black/50 backdrop-blur text-white text-[10px] px-1.5 py-0.5 rounded font-mono">
+                      {idx + 1}/4
+                    </div>
+                  </div>
+                ))}
               </div>
             </div>
           ))}
@@ -392,13 +518,21 @@ export default function App() {
 
       {/* SKILLS */}
       <section id="skills" className="py-24 px-6 sm:px-8 max-w-6xl mx-auto">
-        <SectionHeading index="03 — STACK" title="Skills" subtitle="Tools used across the analytics lifecycle" />
+        <SectionHeading
+          index="03 — STACK"
+          title="Skills"
+          subtitle="Tools used across the analytics lifecycle"
+        />
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-x-10 gap-y-8">
           {SKILLS.map((s) => (
             <div key={s.cat}>
-              <p className="font-mono text-[11px] uppercase tracking-[0.15em] text-accent mb-3">{s.cat}</p>
+              <p className="font-mono text-[11px] uppercase tracking-[0.15em] text-accent mb-3">
+                {s.cat}
+              </p>
               <div className="flex flex-wrap gap-2">
-                {s.items.map((it) => <Chip key={it}>{it}</Chip>)}
+                {s.items.map((it) => (
+                  <Chip key={it}>{it}</Chip>
+                ))}
               </div>
             </div>
           ))}
@@ -407,14 +541,24 @@ export default function App() {
 
       {/* LEADERSHIP */}
       <section className="py-24 px-6 sm:px-8 max-w-6xl mx-auto">
-        <SectionHeading index="04 — BEYOND WORK" title="Leadership & Organizations" />
+        <SectionHeading
+          index="04 — BEYOND WORK"
+          title="Leadership & Organizations"
+        />
         <div className="grid sm:grid-cols-3 gap-6">
           {LEADERSHIP.map((l) => (
-            <div key={l.org + l.role} className="p-6 rounded-xl border border-line">
+            <div
+              key={l.org + l.role}
+              className="p-6 rounded-xl border border-line"
+            >
               <p className="font-mono text-[11px] text-muted">{l.date}</p>
-              <h3 className="font-display font-semibold text-ink mt-2">{l.org}</h3>
+              <h3 className="font-display font-semibold text-ink mt-2">
+                {l.org}
+              </h3>
               <p className="text-sm text-accent mt-0.5">{l.role}</p>
-              <p className="text-sm text-ink/70 mt-3 leading-relaxed">{l.desc}</p>
+              <p className="text-sm text-ink/70 mt-3 leading-relaxed">
+                {l.desc}
+              </p>
             </div>
           ))}
         </div>
@@ -429,24 +573,38 @@ export default function App() {
               <GraduationCap size={20} />
             </div>
             <div>
-              <h3 className="font-display text-xl font-semibold text-ink">Universitas Jember</h3>
-              <p className="text-sm text-muted mt-1">Bachelor of Computer Science · Jember, ID</p>
-              <p className="font-mono text-xs text-muted mt-1">August 2022 — Present</p>
+              <h3 className="font-display text-xl font-semibold text-ink">
+                Universitas Jember
+              </h3>
+              <p className="text-sm text-muted mt-1">
+                Bachelor of Computer Science · Jember, ID
+              </p>
+              <p className="font-mono text-xs text-muted mt-1">
+                August 2022 — Present
+              </p>
             </div>
           </div>
           <div className="text-left sm:text-right">
-            <p className="font-mono text-[11px] uppercase tracking-widest text-muted">GPA</p>
-            <p className="font-display text-4xl font-semibold text-accent">3.91<span className="text-lg text-muted">/4.00</span></p>
+            <p className="font-mono text-[11px] uppercase tracking-widest text-muted">
+              GPA
+            </p>
+            <p className="font-display text-4xl font-semibold text-accent">
+              3.91<span className="text-lg text-muted">/4.00</span>
+            </p>
           </div>
         </div>
 
         <div className="mt-6 grid sm:grid-cols-2 gap-4">
           <div className="p-5 rounded-xl border border-line">
-            <p className="font-mono text-[11px] uppercase tracking-widest text-muted mb-1">Bahasa Indonesia</p>
+            <p className="font-mono text-[11px] uppercase tracking-widest text-muted mb-1">
+              Bahasa Indonesia
+            </p>
             <p className="text-sm text-ink/80">Native</p>
           </div>
           <div className="p-5 rounded-xl border border-line">
-            <p className="font-mono text-[11px] uppercase tracking-widest text-muted mb-1">English</p>
+            <p className="font-mono text-[11px] uppercase tracking-widest text-muted mb-1">
+              English
+            </p>
             <p className="text-sm text-ink/80">Proficient</p>
           </div>
         </div>
@@ -462,13 +620,24 @@ export default function App() {
             </h2>
           </div>
           <div className="flex flex-col gap-3 font-mono text-sm">
-            <a href={`mailto:${PROFILE.email}`} className="flex items-center gap-2 hover:text-accent transition-colors">
+            <a
+              href={`mailto:${PROFILE.email}`}
+              className="flex items-center gap-2 hover:text-accent transition-colors"
+            >
               <Mail size={15} /> {PROFILE.email}
             </a>
-            <a href={`tel:${PROFILE.phone.replace(/\s/g, '')}`} className="flex items-center gap-2 hover:text-accent transition-colors">
+            <a
+              href={`tel:${PROFILE.phone.replace(/\s/g, "")}`}
+              className="flex items-center gap-2 hover:text-accent transition-colors"
+            >
               <Phone size={15} /> {PROFILE.phone}
             </a>
-            <a href={PROFILE.linkedinUrl} target="_blank" rel="noreferrer" className="flex items-center gap-2 hover:text-accent transition-colors">
+            <a
+              href={PROFILE.linkedinUrl}
+              target="_blank"
+              rel="noreferrer"
+              className="flex items-center gap-2 hover:text-accent transition-colors"
+            >
               <Linkedin size={15} /> {PROFILE.linkedin}
             </a>
             <span className="flex items-center gap-2 text-white/50">
@@ -478,7 +647,9 @@ export default function App() {
         </div>
 
         <div className="mt-10 flex flex-col sm:flex-row items-center justify-between gap-3 font-mono text-[11px] text-muted">
-          <span className="flex items-center gap-1.5"><Terminal size={13} /> built with React + Tailwind</span>
+          <span className="flex items-center gap-1.5">
+            <Terminal size={13} /> built with React + Tailwind
+          </span>
           <span>© {new Date().getFullYear()} Ghanza Betananda Dilva</span>
         </div>
       </section>
