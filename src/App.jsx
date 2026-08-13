@@ -73,6 +73,18 @@ const STATS = [
 
 const EXPERIENCE = [
   {
+    org: "Bimbel Intisari",
+    role: "Full-Stack Developer",
+    place: "Banyuwangi, ID",
+    date: "Jul 2026 — Now",
+    bullets: [
+      "Develop and maintain a full-stack web application for Bimbel Intisari, independently handling frontend, backend, REST API integration, database management, and deployment.",
+      "Implement and maintain website features based on the tutoring center's requirements, including user accounts, tryout functionality, and result management.",
+    ],
+    tags: ["React.js", "Laravel", "PostgreSQL", "REST API", "Git", "Vercel"],
+    // images: [diskominfo1, diskominfo2, diskominfo3, diskominfo4, diskominfo5],
+  },
+  {
     org: "Diskominfo Banyuwangi",
     role: "Front-End Developer Intern",
     place: "Banyuwangi, ID",
