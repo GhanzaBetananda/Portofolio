@@ -17,6 +17,10 @@ export default {
         body: ['Inter', 'sans-serif'],
         mono: ['"JetBrains Mono"', 'monospace'],
       },
+      boxShadow: {
+        card: '0 1px 2px rgba(18, 20, 26, 0.05)',
+        lift: '0 16px 40px -20px rgba(18, 20, 26, 0.2)',
+      },
     },
   },
   plugins: [],

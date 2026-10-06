@@ -6,20 +6,20 @@ import {
   MapPin,
   Linkedin,
   ArrowUpRight,
+  ArrowRight,
   Menu,
   X,
   Database,
-  Terminal,
   GraduationCap,
-  ChevronRight,
-  Image,
+  BarChart3,
+  LayoutDashboard,
+  BrainCircuit,
 } from "lucide-react";
 // Import gambar untuk projects
 import bibitani1 from "./images/b1.png";
 import bibitani2 from "./images/b2.jpg";
 import bibitani3 from "./images/b3.png";
 import bibitani4 from "./images/b4.png";
-import bibitani5 from "./images/b5.png";
 import diskominfo1 from "./images/d1.png";
 import diskominfo2 from "./images/d2.png";
 import diskominfo3 from "./images/d3.png";
@@ -57,30 +57,47 @@ import sar4 from "./images/sar4.jpeg";
 
 const PROFILE = {
   name: "Ghanza Betananda Dilva",
+  shortName: "Ghanza Dilva",
   role: "Data Analyst & Data Scientist",
   location: "Banyuwangi, East Java, Indonesia",
   phone: "+62 859-3008-8301",
   email: "ghanzabeta212@gmail.com",
   linkedin: "linkedin.com/in/ghanzabetananda",
-  linkedinUrl: "http://www.linkedin.com/in/ghanzabetananda",
-  bio: `Data Analyst and Data Scientist with hands-on experience in data analysis, data visualization, machine learning, and data preprocessing. Proficient in transforming complex datasets into actionable insights using Python, SQL, Tableau, and statistical analysis.`,
+  linkedinUrl: "https://www.linkedin.com/in/ghanzabetananda",
+  bio: `Data Analyst and Data Scientist with hands-on experience in data analysis, visualization, machine learning, and data preprocessing. I turn complex datasets into clear, actionable insights using Python, SQL, and Tableau.`,
 };
 
-const STATS = [
-  { key: "gpa", label: "GPA", value: "3.91", unit: "/4.00" },
-  { key: "tables", label: "db_tables_cleansed", value: "260", unit: "+" },
-  { key: "regions", label: "regencies_standardized", value: "38", unit: "" },
-  { key: "projects", label: "analytics_projects", value: "20", unit: "+" },
-  { key: "students", label: "students_mentored", value: "200", unit: "+" },
-  { key: "modules", label: "dashboard_modules_built", value: "6", unit: "" },
+const HIGHLIGHT_STATS = [
+  { value: "3.91", unit: "/4.00", label: "Cumulative GPA" },
+  { value: "20+", unit: "", label: "Analytics projects" },
+  { value: "260+", unit: "", label: "Tables cleansed" },
+  { value: "200+", unit: "", label: "Students mentored" },
+];
+
+const FOCUS = [
+  {
+    icon: BarChart3,
+    title: "Data Analysis",
+    desc: "Cleaning, EDA, and statistical analysis with Python, SQL, and Excel to answer business questions.",
+  },
+  {
+    icon: LayoutDashboard,
+    title: "Dashboards & Visualization",
+    desc: "Tableau, Power BI, and React dashboards that stakeholders actually use and understand.",
+  },
+  {
+    icon: BrainCircuit,
+    title: "Machine Learning",
+    desc: "Feature engineering and modeling with Scikit-learn for prediction and classification.",
+  },
 ];
 
 const EXPERIENCE = [
   {
     org: "Kantor Pencarian dan Pertolongan Banyuwangi",
     role: "Asisten Humas",
-    place: "Banyuwangi, ID",
-    date: "Sep 2026 — Now",
+    place: "Banyuwangi, Indonesia",
+    date: "Sep 2026 — Present",
     bullets: [
       "Documented all office activities through photography and video editing, producing visual content for digital publication.",
       "Created infographics and press releases and managed content distribution across official Instagram and TikTok accounts.",
@@ -91,23 +108,22 @@ const EXPERIENCE = [
   {
     org: "Bimbel Intisari",
     role: "Full-Stack Developer",
-    place: "Banyuwangi, ID",
-    date: "Jul 2026 — Now",
+    place: "Banyuwangi, Indonesia",
+    date: "Jul 2026 — Present",
     bullets: [
-      "Develop and maintain a full-stack web application for Bimbel Intisari, independently handling frontend, backend, REST API integration, database management, and deployment.",
-      "Implement and maintain website features based on the tutoring center's requirements, including user accounts, tryout functionality, and result management.",
+      "Develop and maintain a full-stack web application, independently handling frontend, backend, REST API integration, and deployment.",
+      "Implement features based on tutoring requirements, including user accounts, tryout functionality, and result management.",
     ],
-    tags: ["React.js", "Laravel", "PostgreSQL", "REST API", "Git", "Vercel"],
-    // images: [diskominfo1, diskominfo2, diskominfo3, diskominfo4, diskominfo5],
+    tags: ["React.js", "Laravel", "PostgreSQL", "REST API", "Vercel"],
   },
   {
     org: "Diskominfo Banyuwangi",
     role: "Front-End Developer Intern",
-    place: "Banyuwangi, ID",
+    place: "Banyuwangi, Indonesia",
     date: "Feb 2025 — Jun 2025",
     bullets: [
-      "Developed an analytics dashboard using React.js, HTML, and Tailwind CSS, integrated with a MySQL database to monitor crowd density and waste accumulation detection results.",
-      "Built 6 integrated dashboard modules and 3 role-based user interfaces covering account management, analytics monitoring, historical tracking, and reporting.",
+      "Developed an analytics dashboard with React.js and Tailwind CSS, integrated with MySQL to monitor crowd density and waste accumulation.",
+      "Built 6 integrated dashboard modules and 3 role-based interfaces covering analytics, history, and reporting.",
     ],
     tags: ["React.js", "Tailwind CSS", "MySQL"],
     images: [diskominfo1, diskominfo2, diskominfo3, diskominfo4, diskominfo5],
@@ -115,12 +131,12 @@ const EXPERIENCE = [
   {
     org: "Social Economic Accelerator Lab (SEAL)",
     role: "Data Scientist Intern",
-    place: "Surabaya, ID",
+    place: "Surabaya, Indonesia",
     date: "Feb 2025 — Jun 2025",
     bullets: [
-      "Contributed to the Open Data Jatim platform for Diskominfo Jawa Timur, improving data quality and analytics workflows for the provincial open data portal.",
-      "Built data cleansing scripts in Python to standardize master data across 38 regencies and cities.",
-      "Cleansed 260 database tables in Google Colab, connected via DBeaver, to standardize data for downstream analytics.",
+      "Contributed to the Open Data Jatim platform for Diskominfo Jawa Timur, improving data quality and analytics workflows.",
+      "Built Python cleansing scripts to standardize master data across 38 regencies and cities.",
+      "Cleansed 260 database tables in Google Colab via DBeaver for downstream analytics.",
     ],
     tags: ["Python", "Google Colab", "DBeaver"],
     images: [seal1, seal2, seal3, seal4, seal5],
@@ -128,11 +144,11 @@ const EXPERIENCE = [
   {
     org: "Smart Agriculture Lab, UNEJ",
     role: "Assistant Lecturer",
-    place: "Jember, ID",
+    place: "Jember, Indonesia",
     date: "Jul 2024 — Dec 2025",
     bullets: [
-      "Mentored 6 Software Development (PPL) classes of 200+ undergraduate students across 6 project teams.",
-      "Delivered instruction in SDLC practices, UML modeling (Use Case, Activity, Sequence, Class, ER Diagrams), and Software Requirements Specification (SRS).",
+      "Mentored 6 Software Development classes of 200+ undergraduates across 6 project teams.",
+      "Taught SDLC practices, UML modeling, and Software Requirements Specification (SRS).",
     ],
     tags: ["SDLC", "UML", "Mentoring"],
     images: [pc1, pc2, pc3, pc4, pc5],
@@ -140,11 +156,11 @@ const EXPERIENCE = [
   {
     org: "MSIB Batch 7 — Karier.mu",
     role: "Data Analyst Independent Study",
-    place: "Jakarta, ID",
+    place: "Jakarta, Indonesia",
     date: "Sep 2024 — Dec 2024",
     bullets: [
-      "Completed an intensive Data Analyst program, delivering 20+ hands-on analytics projects using Python, SQL, Excel, and Tableau.",
-      "Performed end-to-end workflows: data cleaning, EDA, visualization, dashboarding, and business insight presentation.",
+      "Completed an intensive Data Analyst program, delivering 20+ hands-on projects with Python, SQL, Excel, and Tableau.",
+      "Performed end-to-end workflows: data cleaning, EDA, visualization, dashboarding, and insight presentation.",
     ],
     tags: ["Python", "SQL", "Tableau", "Excel"],
     images: [karir1, karir2, karir3, karir4, karir5],
@@ -175,7 +191,7 @@ const LEADERSHIP = [
 const PROJECTS = [
   {
     name: "E-MON SAR Vehicle",
-    desc: "Web-based vehicle inspection system digitizing daily inspection workflows for the BASARNAS Banyuwangi operational fleet — role-based forms, automated maintenance records, and real-time reporting across 5 vehicle categories and 20+ checkpoints.",
+    desc: "Web-based vehicle inspection system digitizing daily inspection workflows for the BASARNAS Banyuwangi fleet — role-based forms, automated maintenance records, and real-time reporting across 5 vehicle categories and 20+ checkpoints.",
     tags: ["Google Apps Script", "Google Sheets"],
     images: [basarnas1, basarnas2, basarnas3, basarnas4],
   },
@@ -187,7 +203,7 @@ const PROJECTS = [
   },
   {
     name: "Bibitani",
-    desc: "Interactive platform designed to support the distribution of horticultural seedling assistance to farmer groups in Jember Regency, facilitating collaboration between the TPHP Department and farmer groups. I contributed as a UI/UX Designer, creating the interface in Figma and developing Use Case, BPMN, Class, and Sequence Diagrams.",
+    desc: "Platform supporting horticultural seedling distribution to farmer groups in Jember Regency. Contributed as UI/UX Designer — Figma interfaces plus Use Case, BPMN, Class, and Sequence diagrams.",
     tags: ["Figma", "UI/UX Design", "UML", "BPMN"],
     images: [bibitani1, bibitani2, bibitani3, bibitani4],
   },
@@ -203,7 +219,7 @@ const SKILLS = [
       "Scikit-learn",
       "EDA",
       "Feature Engineering",
-      "Statistical Analysis",
+      "Statistics",
     ],
   },
   {
@@ -232,55 +248,52 @@ const NAV = [
 
 /* ----------------------------- UI PARTS ----------------------------- */
 
-function Eyebrow({ children }) {
+function Eyebrow({ children, dark = false }) {
   return (
-    <div className="flex items-center gap-2 font-mono text-[11px] tracking-[0.2em] uppercase text-accent mb-4">
-      <span className="w-4 h-px bg-accent" />
+    <p
+      className={`flex items-center gap-2 font-mono text-[11px] font-medium uppercase tracking-[0.18em] ${
+        dark ? "text-white/60" : "text-accent"
+      }`}
+    >
+      <span
+        className={`h-px w-6 ${dark ? "bg-white/40" : "bg-accent"}`}
+        aria-hidden
+      />
       {children}
-    </div>
+    </p>
   );
 }
 
-function SectionHeading({ index, title, subtitle }) {
+function SectionHeader({ index, title, desc }) {
   return (
-    <div className="flex items-end justify-between gap-6 mb-12 border-b border-line pb-6">
+    <div className="mb-10 flex flex-col gap-3 sm:mb-12 sm:flex-row sm:items-end sm:justify-between">
       <div>
-        <span className="font-mono text-xs text-muted">{index}</span>
-        <h2 className="font-display text-3xl sm:text-4xl font-semibold text-ink mt-1">
+        <p className="font-mono text-xs text-muted">{index}</p>
+        <h2 className="mt-2 font-display text-3xl font-semibold tracking-tight text-ink sm:text-4xl">
           {title}
         </h2>
       </div>
-      {subtitle && (
-        <p className="hidden sm:block font-mono text-xs text-muted max-w-[220px] text-right leading-relaxed">
-          {subtitle}
+      {desc && (
+        <p className="max-w-sm text-sm leading-relaxed text-muted sm:text-right">
+          {desc}
         </p>
       )}
     </div>
   );
 }
 
-function Chip({ children }) {
+function Chip({ children, tone = "default" }) {
+  if (tone === "white") {
+    return (
+      <span className="inline-flex items-center rounded-full border border-slate-200 bg-white px-3 py-1 text-xs font-medium text-slate-600">
+        {children}
+      </span>
+    );
+  }
   return (
-    <span className="font-mono text-[11px] px-2.5 py-1 rounded-full border border-line text-muted bg-surface">
+    <span className="inline-flex items-center rounded-full bg-slate-100 px-3 py-1 text-xs font-medium text-slate-600">
       {children}
     </span>
-  );
-}
-
-/* Signature hero element: a portrait/photo pulled from src/images,
-   imported as a module so bundlers (Vite/CRA) resolve and hash it correctly. */
-function HeroImage() {
-  return (
-    <div className="rounded-xl overflow-hidden shadow-[0_20px_60px_-20px_rgba(15,17,21,0.15)]">
-      <div className="relative aspect-[2/3] w-full max-w-[329px] mx-auto">
-        <img
-          src={diriImg}
-          alt="Ghanza Betananda Dilva"
-          className="w-full h-full object-cover"
-          loading="lazy"
-        />
-      </div>
-    </div>
   );
 }
 
@@ -292,7 +305,8 @@ export default function App() {
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 8);
-    window.addEventListener("scroll", onScroll);
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
@@ -302,383 +316,549 @@ export default function App() {
   };
 
   return (
-    <div className="min-h-screen bg-white text-ink font-body selection:bg-accent selection:text-white">
+    <div className="min-h-screen bg-white font-body text-ink antialiased">
       {/* NAV */}
       <header
-        className={`fixed top-0 inset-x-0 z-50 transition-all ${
+        className={`fixed inset-x-0 top-0 z-50 transition-all duration-200 ${
           scrolled
-            ? "bg-white/90 backdrop-blur border-b border-line"
-            : "bg-transparent"
+            ? "border-b border-line bg-white/90 backdrop-blur-md"
+            : "border-b border-transparent bg-white/70 backdrop-blur-sm"
         }`}
       >
-        <div className="max-w-6xl mx-auto px-6 sm:px-8 h-16 flex items-center justify-between">
+        <div className="mx-auto flex h-16 max-w-6xl items-center justify-between px-6">
           <button
             onClick={() => scrollTo("top")}
-            className="font-display font-semibold tracking-tight text-lg flex items-center gap-2"
+            className="flex items-center gap-2.5"
+            aria-label="Back to top"
           >
-            <span className="w-7 h-7 rounded-md bg-ink text-white grid place-items-center font-mono text-xs">
+            <span className="grid h-8 w-8 place-items-center rounded-lg bg-ink font-mono text-xs font-semibold text-white">
               GD
             </span>
-            <span className="hidden sm:inline">ghanza/betananda/dilva</span>
+            <span className="text-left leading-none">
+              <span className="block font-display text-[15px] font-semibold tracking-tight">
+                {PROFILE.shortName}
+              </span>
+              <span className="block font-mono text-[10px] uppercase tracking-wider text-muted">
+                Data Analyst
+              </span>
+            </span>
           </button>
 
-          <nav className="hidden md:flex items-center gap-8">
+          <nav className="hidden items-center gap-7 md:flex">
             {NAV.map((n) => (
               <button
                 key={n.id}
                 onClick={() => scrollTo(n.id)}
-                className="font-mono text-[12px] uppercase tracking-wide text-muted hover:text-ink transition-colors"
+                className="text-[13px] font-medium text-slate-600 transition-colors hover:text-ink"
               >
                 {n.label}
               </button>
             ))}
             <a
               href={`mailto:${PROFILE.email}`}
-              className="font-mono text-[12px] uppercase tracking-wide bg-ink text-white px-4 py-2 rounded-full hover:bg-accent transition-colors"
+              className="inline-flex items-center gap-1.5 rounded-full bg-ink px-4 py-2 text-[13px] font-medium text-white transition-colors hover:bg-accent"
             >
-              Say hello
+              Say hello <ArrowUpRight size={14} />
             </a>
           </nav>
 
           <button
-            className="md:hidden"
+            className="grid h-9 w-9 place-items-center rounded-lg border border-line text-ink md:hidden"
             onClick={() => setMenuOpen((v) => !v)}
             aria-label="Toggle menu"
           >
-            {menuOpen ? <X size={22} /> : <Menu size={22} />}
+            {menuOpen ? <X size={18} /> : <Menu size={18} />}
           </button>
         </div>
 
         {menuOpen && (
-          <div className="md:hidden bg-white border-b border-line px-6 py-4 flex flex-col gap-4">
-            {NAV.map((n) => (
-              <button
-                key={n.id}
-                onClick={() => scrollTo(n.id)}
-                className="font-mono text-sm uppercase tracking-wide text-left text-muted hover:text-ink"
-              >
-                {n.label}
-              </button>
-            ))}
+          <div className="border-t border-line bg-white px-6 py-4 md:hidden">
+            <div className="flex flex-col gap-1">
+              {NAV.map((n) => (
+                <button
+                  key={n.id}
+                  onClick={() => scrollTo(n.id)}
+                  className="rounded-lg px-3 py-2.5 text-left text-sm font-medium text-slate-700 hover:bg-surface"
+                >
+                  {n.label}
+                </button>
+              ))}
+            </div>
           </div>
         )}
       </header>
 
       {/* HERO */}
-      <section id="top" className="pt-36 pb-20 px-6 sm:px-8 max-w-6xl mx-auto">
-        <div className="grid lg:grid-cols-[1.1fr_0.9fr] gap-14 items-center">
+      <section id="top" className="mx-auto max-w-6xl scroll-mt-20 px-6 pb-16 pt-28 sm:pt-32">
+        <div className="grid items-center gap-12 lg:grid-cols-[1.05fr_0.95fr]">
           <div>
-            <Eyebrow>Data Analyst &amp; Data Scientist</Eyebrow>
-            <h1 className="font-display text-[13vw] sm:text-6xl lg:text-[3.6rem] leading-[1.03] font-semibold tracking-tight text-ink">
-              Ghanza Betananda
+            <div className="inline-flex items-center gap-2 rounded-full border border-line bg-white px-3.5 py-1.5 shadow-sm">
+              <span className="relative flex h-2 w-2">
+                <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-400 opacity-60" />
+                <span className="relative inline-flex h-2 w-2 rounded-full bg-emerald-500" />
+              </span>
+              <span className="font-mono text-[11px] font-medium uppercase tracking-wider text-slate-600">
+                Available for opportunities
+              </span>
+            </div>
+
+            <h1 className="mt-6 font-display text-5xl font-semibold leading-[1.05] tracking-tight sm:text-6xl">
+              {PROFILE.name.split(" ").slice(0, 2).join(" ")}
               <br />
-              Dilva
+              <span className="text-slate-400">
+                {PROFILE.name.split(" ").slice(2).join(" ")}
+              </span>
             </h1>
-            <p className="mt-6 text-base sm:text-lg text-muted max-w-xl leading-relaxed">
+
+            <p className="mt-3 text-[15px] font-medium text-accent">
+              {PROFILE.role}
+            </p>
+
+            <p className="mt-5 max-w-xl text-[16px] leading-relaxed text-slate-600">
               {PROFILE.bio}
             </p>
 
             <div className="mt-8 flex flex-wrap items-center gap-3">
               <a
-                href={`https://mail.google.com/mail/?view=cm&fs=1&to=${encodeURIComponent(PROFILE.email)}`}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 bg-ink text-white font-mono text-[12px] uppercase tracking-wide px-5 py-3 rounded-full hover:bg-accent transition-colors"
+                href={`mailto:${PROFILE.email}`}
+                className="inline-flex items-center gap-2 rounded-full bg-ink px-6 py-3 text-sm font-medium text-white transition-all hover:bg-accent"
               >
-                <Mail size={14} /> Email me
+                <Mail size={15} /> Email me
               </a>
               <a
                 href={PROFILE.linkedinUrl}
                 target="_blank"
                 rel="noreferrer"
-                className="inline-flex items-center gap-2 border border-line font-mono text-[12px] uppercase tracking-wide px-5 py-3 rounded-full text-ink hover:border-accent hover:text-accent transition-colors"
+                className="inline-flex items-center gap-2 rounded-full border border-line bg-white px-6 py-3 text-sm font-medium text-ink transition-colors hover:border-ink"
               >
-                <Linkedin size={14} /> LinkedIn <ArrowUpRight size={12} />
+                <Linkedin size={15} /> LinkedIn
               </a>
+              <button
+                onClick={() => scrollTo("experience")}
+                className="inline-flex items-center gap-1.5 px-2 py-3 text-sm font-medium text-slate-600 transition-colors hover:text-ink"
+              >
+                View experience <ArrowRight size={15} />
+              </button>
             </div>
 
-            <div className="mt-10 flex flex-wrap gap-x-8 gap-y-2 font-mono text-xs text-muted">
-              <span className="flex items-center gap-1.5">
-                <MapPin size={13} /> {PROFILE.location}
-              </span>
-              <span className="flex items-center gap-1.5">
-                <Phone size={13} /> {PROFILE.phone}
-              </span>
+            <div className="mt-9 grid max-w-xl grid-cols-1 gap-3 sm:grid-cols-2">
+              <div className="flex items-center gap-3 rounded-xl border border-line bg-surface/60 px-4 py-3">
+                <span className="grid h-8 w-8 shrink-0 place-items-center rounded-lg bg-white text-slate-500 shadow-sm">
+                  <MapPin size={15} />
+                </span>
+                <span className="text-[13px] leading-snug text-slate-600">
+                  {PROFILE.location}
+                </span>
+              </div>
+              <div className="flex items-center gap-3 rounded-xl border border-line bg-surface/60 px-4 py-3">
+                <span className="grid h-8 w-8 shrink-0 place-items-center rounded-lg bg-white text-slate-500 shadow-sm">
+                  <Phone size={15} />
+                </span>
+                <span className="text-[13px] leading-snug text-slate-600">
+                  {PROFILE.phone}
+                </span>
+              </div>
             </div>
           </div>
 
-          <HeroImage />
+          {/* Portrait card */}
+          <div className="mx-auto w-full max-w-[380px]">
+            <div className="overflow-hidden rounded-2xl border border-line bg-surface p-3 shadow-[0_24px_60px_-24px_rgba(18,20,26,0.25)]">
+              <div className="overflow-hidden rounded-xl">
+                <img
+                  src={diriImg}
+                  alt="Portrait of Ghanza Betananda Dilva"
+                  className="aspect-[3/4] w-full object-cover"
+                  loading="eager"
+                />
+              </div>
+              <div className="flex items-center justify-between px-2 pb-1 pt-4">
+                <div>
+                  <p className="font-display text-[15px] font-semibold">
+                    {PROFILE.name}
+                  </p>
+                  <p className="mt-0.5 font-mono text-[11px] uppercase tracking-wider text-muted">
+                    {PROFILE.role}
+                  </p>
+                </div>
+                <div className="text-right">
+                  <p className="font-mono text-[10px] uppercase tracking-wider text-muted">
+                    GPA
+                  </p>
+                  <p className="font-display text-xl font-semibold text-accent">
+                    3.91
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* Stats */}
+        <div className="mt-14 grid grid-cols-2 overflow-hidden rounded-2xl border border-line bg-white sm:grid-cols-4">
+          {HIGHLIGHT_STATS.map((s, i) => (
+            <div
+              key={s.label}
+              className={`px-6 py-6 ${i !== 0 ? "border-l border-line" : ""} ${
+                i >= 2 ? "max-sm:border-t max-sm:border-line" : ""
+              } ${i === 2 ? "max-sm:border-l-0" : ""}`}
+            >
+              <p className="font-display text-3xl font-semibold tracking-tight">
+                {s.value}
+                <span className="text-base font-medium text-muted">
+                  {s.unit}
+                </span>
+              </p>
+              <p className="mt-1 font-mono text-[11px] uppercase tracking-wider text-muted">
+                {s.label}
+              </p>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* ABOUT */}
+      <section
+        id="about"
+        className="scroll-mt-20 border-y border-line bg-surface/60"
+      >
+        <div className="mx-auto max-w-6xl px-6 py-20">
+          <SectionHeader
+            index="01 — Profile"
+            title="About"
+            desc="A focused analyst who cares about clean data and clear decisions."
+          />
+          <div className="grid gap-6 md:grid-cols-3">
+            {FOCUS.map((f) => (
+              <div
+                key={f.title}
+                className="rounded-2xl border border-line bg-white p-7"
+              >
+                <span className="grid h-10 w-10 place-items-center rounded-xl bg-accent-soft text-accent">
+                  <f.icon size={19} />
+                </span>
+                <h3 className="mt-5 font-display text-[17px] font-semibold">
+                  {f.title}
+                </h3>
+                <p className="mt-2 text-sm leading-relaxed text-slate-600">
+                  {f.desc}
+                </p>
+              </div>
+            ))}
+          </div>
         </div>
       </section>
 
       {/* EXPERIENCE */}
-      <section id="experience" className="py-24 px-6 sm:px-8 max-w-6xl mx-auto">
-        <SectionHeading
-          index="01 — TIMELINE"
-          title="Professional Experience"
-          subtitle="Internships, research, and teaching roles across data & engineering"
+      <section
+        id="experience"
+        className="mx-auto max-w-6xl scroll-mt-20 px-6 py-20"
+      >
+        <SectionHeader
+          index="02 — Timeline"
+          title="Experience"
+          desc="Internships, research, and teaching across data & engineering."
         />
-        <div className="space-y-0">
-          {EXPERIENCE.map((exp, i) => (
-            <div key={exp.org} className="py-8 border-b border-line group">
-              <div className="grid sm:grid-cols-[160px_1fr] gap-4 sm:gap-10">
-                <div className="font-mono text-xs text-muted pt-1">
+        <div className="space-y-5">
+          {EXPERIENCE.map((exp) => (
+            <article
+              key={exp.org}
+              className="rounded-2xl border border-line bg-white p-6 transition-shadow hover:shadow-[0_16px_40px_-20px_rgba(18,20,26,0.2)] sm:p-8"
+            >
+              <div className="flex flex-wrap items-center gap-2">
+                <span className="inline-flex items-center rounded-full bg-ink px-3 py-1 font-mono text-[11px] font-medium text-white">
                   {exp.date}
-                </div>
-                <div>
-                  <div className="flex items-baseline gap-2 flex-wrap">
-                    <h3 className="font-display text-xl font-semibold text-ink">
-                      {exp.org}
-                    </h3>
-                    <span className="text-muted text-sm">— {exp.role}</span>
-                  </div>
-                  <p className="font-mono text-[11px] text-muted mt-1">
-                    {exp.place}
-                  </p>
-                  <ul className="mt-4 space-y-2">
-                    {exp.bullets.map((b, j) => (
-                      <li
-                        key={j}
-                        className="flex gap-2 text-sm text-ink/80 leading-relaxed"
-                      >
-                        <ChevronRight
-                          size={14}
-                          className="mt-1 shrink-0 text-accent"
-                        />
-                        {b}
-                      </li>
-                    ))}
-                  </ul>
-                  <div className="mt-4 flex flex-wrap gap-2">
-                    {exp.tags.map((t) => (
-                      <Chip key={t}>{t}</Chip>
-                    ))}
-                  </div>
-                </div>
+                </span>
+                <span className="inline-flex items-center rounded-full border border-line bg-surface px-3 py-1 font-mono text-[11px] text-muted">
+                  {exp.place}
+                </span>
               </div>
 
-              {/* 5 foto dalam satu baris - persegi 1:1 */}
+              <div className="mt-4">
+                <h3 className="font-display text-xl font-semibold tracking-tight">
+                  {exp.org}
+                </h3>
+                <p className="mt-1 text-sm font-medium text-accent">
+                  {exp.role}
+                </p>
+              </div>
+
+              <ul className="mt-4 max-w-3xl space-y-2.5">
+                {exp.bullets.map((b, j) => (
+                  <li
+                    key={j}
+                    className="flex gap-3 text-[14.5px] leading-relaxed text-slate-600"
+                  >
+                    <span
+                      className="mt-[9px] h-1.5 w-1.5 shrink-0 rounded-full bg-slate-300"
+                      aria-hidden
+                    />
+                    {b}
+                  </li>
+                ))}
+              </ul>
+
+              <div className="mt-5 flex flex-wrap gap-2">
+                {exp.tags.map((t) => (
+                  <Chip key={t}>{t}</Chip>
+                ))}
+              </div>
+
               {exp.images && (
-                <div className="mt-6">
-                  <div className="flex justify-center items-center gap-3 sm:gap-4">
-                    {exp.images.map((img, idx) => (
+                <div className="mt-6 border-t border-line pt-6">
+                  <div className="grid grid-cols-2 gap-3 sm:grid-cols-4">
+                    {exp.images.slice(0, 4).map((img, idx) => (
                       <div
                         key={idx}
-                        className="relative aspect-square w-14 sm:w-20 md:w-24 rounded-lg overflow-hidden border border-line hover:border-accent transition-colors group/image flex-shrink-0"
+                        className="group overflow-hidden rounded-xl border border-line bg-surface"
                       >
                         <img
                           src={img}
                           alt={`${exp.org} documentation ${idx + 1}`}
-                          className="w-full h-full object-cover transition-transform duration-300 group-hover/image:scale-105"
+                          className="aspect-[4/3] w-full object-cover transition-transform duration-300 group-hover:scale-[1.03]"
                           loading="lazy"
                         />
-                        <div className="absolute bottom-1 right-1 bg-black/60 backdrop-blur text-white text-[8px] sm:text-[10px] px-1.5 py-0.5 rounded font-mono">
-                          {idx + 1}
-                        </div>
                       </div>
                     ))}
                   </div>
-                  <p className="text-center font-mono text-[10px] text-muted mt-2">
-                    Project documentation
+                  <p className="mt-3 font-mono text-[11px] uppercase tracking-wider text-muted">
+                    Documentation — {exp.org}
                   </p>
                 </div>
               )}
-            </div>
+            </article>
           ))}
         </div>
       </section>
 
       {/* PROJECTS */}
-      <section id="projects" className="py-24 px-6 sm:px-8 max-w-6xl mx-auto">
-        <SectionHeading
-          index="02 — BUILDS"
-          title="Projects"
-          subtitle="Applied systems shipped end to end"
-        />
-        <div className="space-y-10">
-          {PROJECTS.map((p) => (
-            <div
-              key={p.name}
-              className="grid lg:grid-cols-[1fr_1fr] gap-8 items-start"
-            >
-              {/* Card kiri */}
-              <div className="p-7 rounded-xl border border-line bg-surface hover:border-accent transition-colors">
-                <div className="flex items-center justify-between mb-4">
-                  <Database size={18} className="text-accent" />
-                  <ArrowUpRight size={16} className="text-muted" />
-                </div>
-                <h3 className="font-display text-lg font-semibold text-ink">
-                  {p.name}
-                </h3>
-                <p className="mt-3 text-sm text-ink/70 leading-relaxed">
-                  {p.desc}
-                </p>
-                <div className="mt-5 flex flex-wrap gap-2">
-                  {p.tags.map((t) => (
-                    <Chip key={t}>{t}</Chip>
+      <section
+        id="projects"
+        className="scroll-mt-20 border-y border-line bg-surface/60"
+      >
+        <div className="mx-auto max-w-6xl px-6 py-20">
+          <SectionHeader
+            index="03 — Builds"
+            title="Projects"
+            desc="Applied systems shipped end to end."
+          />
+          <div className="space-y-5">
+            {PROJECTS.map((p) => (
+              <article
+                key={p.name}
+                className="grid overflow-hidden rounded-2xl border border-line bg-white lg:grid-cols-2"
+              >
+                <div className="grid grid-cols-2 gap-2 bg-surface p-3">
+                  {p.images.map((img, idx) => (
+                    <div
+                      key={idx}
+                      className="group overflow-hidden rounded-lg border border-line bg-white"
+                    >
+                      <img
+                        src={img}
+                        alt={`${p.name} screenshot ${idx + 1}`}
+                        className="aspect-[16/10] w-full object-cover transition-transform duration-300 group-hover:scale-[1.03]"
+                        loading="lazy"
+                      />
+                    </div>
                   ))}
                 </div>
-              </div>
-
-              {/* Gallery foto kanan - 4 images in 2x2 grid */}
-              <div className="grid grid-cols-2 gap-3">
-                {p.images.map((img, idx) => (
-                  <div
-                    key={idx}
-                    className="relative aspect-video rounded-lg overflow-hidden bg-surface border border-line hover:border-accent transition-colors group/image"
-                  >
-                    <img
-                      src={img}
-                      alt={`${p.name} screenshot ${idx + 1}`}
-                      className="w-full h-full object-cover transition-transform duration-300 group-hover/image:scale-105"
-                      loading="lazy"
-                    />
-                    <div className="absolute top-2 right-2 bg-black/50 backdrop-blur text-white text-[10px] px-1.5 py-0.5 rounded font-mono">
-                      {idx + 1}/4
-                    </div>
+                <div className="flex flex-col justify-center p-7 sm:p-9">
+                  <span className="grid h-10 w-10 place-items-center rounded-xl bg-accent-soft text-accent">
+                    <Database size={18} />
+                  </span>
+                  <h3 className="mt-4 font-display text-xl font-semibold tracking-tight">
+                    {p.name}
+                  </h3>
+                  <p className="mt-3 text-[14.5px] leading-relaxed text-slate-600">
+                    {p.desc}
+                  </p>
+                  <div className="mt-5 flex flex-wrap gap-2">
+                    {p.tags.map((t) => (
+                      <Chip key={t}>{t}</Chip>
+                    ))}
                   </div>
-                ))}
-              </div>
-            </div>
-          ))}
+                </div>
+              </article>
+            ))}
+          </div>
         </div>
       </section>
 
       {/* SKILLS */}
-      <section id="skills" className="py-24 px-6 sm:px-8 max-w-6xl mx-auto">
-        <SectionHeading
-          index="03 — STACK"
+      <section id="skills" className="mx-auto max-w-6xl scroll-mt-20 px-6 py-20">
+        <SectionHeader
+          index="04 — Stack"
           title="Skills"
-          subtitle="Tools used across the analytics lifecycle"
+          desc="Tools used across the analytics lifecycle."
         />
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-x-10 gap-y-8">
+        <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {SKILLS.map((s) => (
-            <div key={s.cat}>
-              <p className="font-mono text-[11px] uppercase tracking-[0.15em] text-accent mb-3">
+            <div
+              key={s.cat}
+              className="rounded-2xl border border-line bg-surface/60 p-6"
+            >
+              <p className="font-mono text-[11px] font-medium uppercase tracking-[0.14em] text-slate-500">
                 {s.cat}
               </p>
-              <div className="flex flex-wrap gap-2">
+              <div className="mt-4 flex flex-wrap gap-2">
                 {s.items.map((it) => (
-                  <Chip key={it}>{it}</Chip>
+                  <Chip key={it} tone="white">
+                    {it}
+                  </Chip>
                 ))}
               </div>
             </div>
           ))}
         </div>
-      </section>
 
-      {/* LEADERSHIP */}
-      <section className="py-24 px-6 sm:px-8 max-w-6xl mx-auto">
-        <SectionHeading
-          index="04 — BEYOND WORK"
-          title="Leadership & Organizations"
-        />
-        <div className="grid sm:grid-cols-3 gap-6">
-          {LEADERSHIP.map((l) => (
-            <div
-              key={l.org + l.role}
-              className="p-6 rounded-xl border border-line"
-            >
-              <p className="font-mono text-[11px] text-muted">{l.date}</p>
-              <h3 className="font-display font-semibold text-ink mt-2">
-                {l.org}
-              </h3>
-              <p className="text-sm text-accent mt-0.5">{l.role}</p>
-              <p className="text-sm text-ink/70 mt-3 leading-relaxed">
-                {l.desc}
-              </p>
-            </div>
-          ))}
+        {/* Leadership */}
+        <div className="mt-16">
+          <div className="mb-8">
+            <p className="font-mono text-xs text-muted">05 — Beyond work</p>
+            <h3 className="mt-2 font-display text-2xl font-semibold tracking-tight">
+              Leadership & Organizations
+            </h3>
+          </div>
+          <div className="grid gap-4 md:grid-cols-3">
+            {LEADERSHIP.map((l) => (
+              <div
+                key={l.org + l.role}
+                className="rounded-2xl border border-line bg-white p-6"
+              >
+                <p className="font-mono text-[11px] uppercase tracking-wider text-muted">
+                  {l.date}
+                </p>
+                <h4 className="mt-3 font-display text-[16px] font-semibold leading-snug">
+                  {l.org}
+                </h4>
+                <p className="mt-1 text-[13px] font-medium text-accent">
+                  {l.role}
+                </p>
+                <p className="mt-3 text-sm leading-relaxed text-slate-600">
+                  {l.desc}
+                </p>
+              </div>
+            ))}
+          </div>
         </div>
       </section>
 
       {/* EDUCATION */}
-      <section id="education" className="py-24 px-6 sm:px-8 max-w-6xl mx-auto">
-        <SectionHeading index="05 — EDUCATION" title="Education" />
-        <div className="rounded-xl border border-line p-8 flex flex-col sm:flex-row sm:items-center justify-between gap-6 bg-surface">
+      <section
+        id="education"
+        className="mx-auto max-w-6xl scroll-mt-20 px-6 pb-20"
+      >
+        <SectionHeader index="06 — Education" title="Education" />
+        <div className="flex flex-col gap-6 rounded-2xl border border-line bg-white p-7 sm:flex-row sm:items-center sm:justify-between sm:p-9">
           <div className="flex items-start gap-4">
-            <div className="w-11 h-11 rounded-lg bg-ink text-white grid place-items-center shrink-0">
-              <GraduationCap size={20} />
-            </div>
+            <span className="grid h-12 w-12 shrink-0 place-items-center rounded-xl bg-ink text-white">
+              <GraduationCap size={22} />
+            </span>
             <div>
-              <h3 className="font-display text-xl font-semibold text-ink">
+              <h3 className="font-display text-xl font-semibold tracking-tight">
                 Universitas Jember
               </h3>
-              <p className="text-sm text-muted mt-1">
-                Bachelor of Computer Science · Jember, ID
+              <p className="mt-1 text-sm text-slate-600">
+                Bachelor of Computer Science · Jember, Indonesia
               </p>
-              <p className="font-mono text-xs text-muted mt-1">
+              <p className="mt-1 font-mono text-xs text-muted">
                 August 2022 — Present
               </p>
             </div>
           </div>
-          <div className="text-left sm:text-right">
+          <div className="border-t border-line pt-5 sm:border-0 sm:pt-0 sm:text-right">
             <p className="font-mono text-[11px] uppercase tracking-widest text-muted">
               GPA
             </p>
-            <p className="font-display text-4xl font-semibold text-accent">
-              3.91<span className="text-lg text-muted">/4.00</span>
+            <p className="mt-1 font-display text-4xl font-semibold tracking-tight text-ink">
+              3.91
+              <span className="text-lg font-medium text-muted">/4.00</span>
             </p>
           </div>
         </div>
 
-        <div className="mt-6 grid sm:grid-cols-2 gap-4">
-          <div className="p-5 rounded-xl border border-line">
-            <p className="font-mono text-[11px] uppercase tracking-widest text-muted mb-1">
+        <div className="mt-4 grid gap-4 sm:grid-cols-2">
+          <div className="rounded-2xl border border-line bg-surface/60 px-6 py-5">
+            <p className="font-mono text-[11px] uppercase tracking-widest text-muted">
               Bahasa Indonesia
             </p>
-            <p className="text-sm text-ink/80">Native</p>
+            <p className="mt-1 text-sm font-medium">Native</p>
           </div>
-          <div className="p-5 rounded-xl border border-line">
-            <p className="font-mono text-[11px] uppercase tracking-widest text-muted mb-1">
+          <div className="rounded-2xl border border-line bg-surface/60 px-6 py-5">
+            <p className="font-mono text-[11px] uppercase tracking-widest text-muted">
               English
             </p>
-            <p className="text-sm text-ink/80">Proficient</p>
+            <p className="mt-1 text-sm font-medium">Proficient</p>
           </div>
         </div>
       </section>
 
       {/* CONTACT / FOOTER */}
-      <section id="contact" className="py-24 px-6 sm:px-8 max-w-6xl mx-auto">
-        <div className="rounded-2xl bg-ink text-white p-10 sm:p-14 flex flex-col lg:flex-row items-start lg:items-end justify-between gap-10">
-          <div>
-            <Eyebrow>Let's work together</Eyebrow>
-            <h2 className="font-display text-3xl sm:text-5xl font-semibold leading-tight max-w-xl">
-              Turning raw data into decisions worth making.
-            </h2>
-          </div>
-          <div className="flex flex-col gap-3 font-mono text-sm">
-            <a
-              href={`mailto:${PROFILE.email}`}
-              className="flex items-center gap-2 hover:text-accent transition-colors"
-            >
-              <Mail size={15} /> {PROFILE.email}
-            </a>
-            <a
-              href={`tel:${PROFILE.phone.replace(/\s/g, "")}`}
-              className="flex items-center gap-2 hover:text-accent transition-colors"
-            >
-              <Phone size={15} /> {PROFILE.phone}
-            </a>
-            <a
-              href={PROFILE.linkedinUrl}
-              target="_blank"
-              rel="noreferrer"
-              className="flex items-center gap-2 hover:text-accent transition-colors"
-            >
-              <Linkedin size={15} /> {PROFILE.linkedin}
-            </a>
-            <span className="flex items-center gap-2 text-white/50">
-              <MapPin size={15} /> {PROFILE.location}
-            </span>
+      <section
+        id="contact"
+        className="mx-auto max-w-6xl scroll-mt-20 px-6 pb-10"
+      >
+        <div className="overflow-hidden rounded-[24px] bg-[#101218] p-8 text-white sm:p-12">
+          <div className="flex flex-col gap-10 lg:flex-row lg:items-end lg:justify-between">
+            <div className="max-w-xl">
+              <Eyebrow dark>Let&apos;s work together</Eyebrow>
+              <h2 className="mt-4 font-display text-3xl font-semibold leading-[1.15] tracking-tight sm:text-[2.75rem]">
+                Turning raw data into decisions worth making.
+              </h2>
+              <p className="mt-4 max-w-md text-[15px] leading-relaxed text-white/60">
+                Open to data analyst, data science, and dashboard roles —
+                freelance or full-time.
+              </p>
+              <div className="mt-7 flex flex-wrap gap-3">
+                <a
+                  href={`mailto:${PROFILE.email}`}
+                  className="inline-flex items-center gap-2 rounded-full bg-white px-6 py-3 text-sm font-medium text-ink transition-colors hover:bg-accent hover:text-white"
+                >
+                  <Mail size={15} /> {PROFILE.email}
+                </a>
+                <a
+                  href={PROFILE.linkedinUrl}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="inline-flex items-center gap-2 rounded-full border border-white/20 px-6 py-3 text-sm font-medium text-white transition-colors hover:border-white/50"
+                >
+                  <Linkedin size={15} /> LinkedIn <ArrowUpRight size={14} />
+                </a>
+              </div>
+            </div>
+            <div className="w-full max-w-xs space-y-3 rounded-2xl border border-white/10 bg-white/[0.04] p-5 text-sm">
+              <a
+                href={`mailto:${PROFILE.email}`}
+                className="flex items-center gap-3 text-white/80 transition-colors hover:text-white"
+              >
+                <span className="grid h-8 w-8 place-items-center rounded-lg bg-white/10">
+                  <Mail size={14} />
+                </span>
+                {PROFILE.email}
+              </a>
+              <a
+                href={`tel:${PROFILE.phone.replace(/[\s-]/g, "")}`}
+                className="flex items-center gap-3 text-white/80 transition-colors hover:text-white"
+              >
+                <span className="grid h-8 w-8 place-items-center rounded-lg bg-white/10">
+                  <Phone size={14} />
+                </span>
+                {PROFILE.phone}
+              </a>
+              <span className="flex items-center gap-3 text-white/50">
+                <span className="grid h-8 w-8 place-items-center rounded-lg bg-white/10">
+                  <MapPin size={14} />
+                </span>
+                {PROFILE.location}
+              </span>
+            </div>
           </div>
         </div>
 
-        <div className="mt-10 flex flex-col sm:flex-row items-center justify-between gap-3 font-mono text-[11px] text-muted">
-          <span className="flex items-center gap-1.5">
-            <Terminal size={13} /> built with React + Tailwind
-          </span>
-          <span>© {new Date().getFullYear()} Ghanza Betananda Dilva</span>
+        <div className="mt-8 flex flex-col items-center justify-between gap-3 border-t border-line pt-6 font-mono text-[11px] text-muted sm:flex-row">
+          <span>© {new Date().getFullYear()} {PROFILE.name}</span>
+          <span>Built with React + Tailwind</span>
         </div>
       </section>
     </div>
