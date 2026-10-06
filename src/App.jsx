@@ -73,6 +73,17 @@ const STATS = [
 
 const EXPERIENCE = [
   {
+    org: "Kantor Pencarian dan Pertolongan Banyuwangi",
+    role: "Asisten Humas",
+    place: "Banyuwangi, ID",
+    date: "Sep 2026 — Now",
+    bullets: [
+      "Documented all office activities through photography and video editing, producing visual content for digital publication.",
+      "Created infographics and press releases and managed content distribution across official Instagram and TikTok accounts.",
+    ],
+    tags: ["CapCut", "PixelLab", "Instagram", "TikTok"],
+  },
+  {
     org: "Bimbel Intisari",
     role: "Full-Stack Developer",
     place: "Banyuwangi, ID",
