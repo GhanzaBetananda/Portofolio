@@ -48,6 +48,7 @@ import pc2 from "./images/pc2.jpg";
 import pc3 from "./images/pc3.jpg";
 import pc4 from "./images/pc4.png";
 import pc5 from "./images/pc5.jpeg";
+import sar1 from "./images/sar1.jpeg";
 
 /* ----------------------------- DATA ----------------------------- */
 
