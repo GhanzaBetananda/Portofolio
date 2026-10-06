@@ -49,6 +49,9 @@ import pc3 from "./images/pc3.jpg";
 import pc4 from "./images/pc4.png";
 import pc5 from "./images/pc5.jpeg";
 import sar1 from "./images/sar1.jpeg";
+import sar2 from "./images/sar2.jpeg";
+import sar3 from "./images/sar3.jpeg";
+import sar4 from "./images/sar4.jpeg";
 
 /* ----------------------------- DATA ----------------------------- */
 
@@ -83,6 +86,7 @@ const EXPERIENCE = [
       "Created infographics and press releases and managed content distribution across official Instagram and TikTok accounts.",
     ],
     tags: ["CapCut", "PixelLab", "Instagram", "TikTok"],
+    images: [sar1, sar2, sar3, sar4],
   },
   {
     org: "Bimbel Intisari",
