@@ -58,13 +58,13 @@ import sar4 from "./images/sar4.jpeg";
 const PROFILE = {
   name: "Ghanza Betananda Dilva",
   shortName: "Ghanza Dilva",
-  role: "Data Analyst & Data Scientist",
+  role: "Data & Web Development Enthusiast",
   location: "Banyuwangi, East Java, Indonesia",
   phone: "+62 859-3008-8301",
   email: "ghanzabeta212@gmail.com",
   linkedin: "linkedin.com/in/ghanzabetananda",
   linkedinUrl: "https://www.linkedin.com/in/ghanzabetananda",
-  bio: `Data Analyst and Data Scientist with hands-on experience in data analysis, visualization, machine learning, and data preprocessing. I turn complex datasets into clear, actionable insights using Python, SQL, and Tableau.`,
+  bio: `Data & Web Development Enthusiast with hands-on experience in data analysis, visualization, machine learning, and web application development. Skilled in Python, SQL, Tableau, React.js, and modern web technologies.`,
 };
 
 const HIGHLIGHT_STATS = [
@@ -389,7 +389,10 @@ export default function App() {
       </header>
 
       {/* HERO */}
-      <section id="top" className="mx-auto max-w-6xl scroll-mt-20 px-6 pb-16 pt-28 sm:pt-32">
+      <section
+        id="top"
+        className="mx-auto max-w-6xl scroll-mt-20 px-6 pb-16 pt-28 sm:pt-32"
+      >
         <div className="grid items-center gap-12 lg:grid-cols-[1.05fr_0.95fr]">
           <div>
             <div className="inline-flex items-center gap-2 rounded-full border border-line bg-white px-3.5 py-1.5 shadow-sm">
@@ -686,7 +689,10 @@ export default function App() {
       </section>
 
       {/* SKILLS */}
-      <section id="skills" className="mx-auto max-w-6xl scroll-mt-20 px-6 py-20">
+      <section
+        id="skills"
+        className="mx-auto max-w-6xl scroll-mt-20 px-6 py-20"
+      >
         <SectionHeader
           index="04 — Stack"
           title="Skills"
@@ -857,7 +863,9 @@ export default function App() {
         </div>
 
         <div className="mt-8 flex flex-col items-center justify-between gap-3 border-t border-line pt-6 font-mono text-[11px] text-muted sm:flex-row">
-          <span>© {new Date().getFullYear()} {PROFILE.name}</span>
+          <span>
+            © {new Date().getFullYear()} {PROFILE.name}
+          </span>
           <span>Built with React + Tailwind</span>
         </div>
       </section>
