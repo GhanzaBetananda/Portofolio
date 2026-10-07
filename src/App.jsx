@@ -52,6 +52,12 @@ import sar1 from "./images/sar1.jpeg";
 import sar2 from "./images/sar2.jpeg";
 import sar3 from "./images/sar3.jpeg";
 import sar4 from "./images/sar4.jpeg";
+import logoBasarnas from "./images/LogoBasarnas.png";
+import logoBimbel from "./images/bimbel.jpeg";
+import logoKomdigi from "./images/komdigi.jpeg";
+import logoSeal from "./images/seal.jpg";
+import logoLab from "./images/labp.jpg";
+import logoKarirmu from "./images/karirmu.jpg";
 
 /* ----------------------------- DATA ----------------------------- */
 
@@ -98,6 +104,7 @@ const EXPERIENCE = [
     role: "Asisten Humas",
     place: "Banyuwangi, Indonesia",
     date: "Sep 2026 — Present",
+    logo: logoBasarnas,
     bullets: [
       "Documented all office activities through photography and video editing, producing visual content for digital publication.",
       "Created infographics and press releases and managed content distribution across official Instagram and TikTok accounts.",
@@ -110,6 +117,7 @@ const EXPERIENCE = [
     role: "Full-Stack Developer",
     place: "Banyuwangi, Indonesia",
     date: "Jul 2026 — Present",
+    logo: logoBimbel,
     bullets: [
       "Develop and maintain a full-stack web application, independently handling frontend, backend, REST API integration, and deployment.",
       "Implement features based on tutoring requirements, including user accounts, tryout functionality, and result management.",
@@ -121,6 +129,7 @@ const EXPERIENCE = [
     role: "Front-End Developer Intern",
     place: "Banyuwangi, Indonesia",
     date: "Feb 2025 — Jun 2025",
+    logo: logoKomdigi,
     bullets: [
       "Developed an analytics dashboard with React.js and Tailwind CSS, integrated with MySQL to monitor crowd density and waste accumulation.",
       "Built 6 integrated dashboard modules and 3 role-based interfaces covering analytics, history, and reporting.",
@@ -133,6 +142,7 @@ const EXPERIENCE = [
     role: "Data Scientist Intern",
     place: "Surabaya, Indonesia",
     date: "Feb 2025 — Jun 2025",
+    logo: logoSeal,
     bullets: [
       "Contributed to the Open Data Jatim platform for Diskominfo Jawa Timur, improving data quality and analytics workflows.",
       "Built Python cleansing scripts to standardize master data across 38 regencies and cities.",
@@ -146,6 +156,7 @@ const EXPERIENCE = [
     role: "Assistant Lecturer",
     place: "Jember, Indonesia",
     date: "Jul 2024 — Dec 2025",
+    logo: logoLab,
     bullets: [
       "Mentored 6 Software Development classes of 200+ undergraduates across 6 project teams.",
       "Taught SDLC practices, UML modeling, and Software Requirements Specification (SRS).",
@@ -158,6 +169,7 @@ const EXPERIENCE = [
     role: "Data Analyst Independent Study",
     place: "Jakarta, Indonesia",
     date: "Sep 2024 — Dec 2024",
+    logo: logoKarirmu,
     bullets: [
       "Completed an intensive Data Analyst program, delivering 20+ hands-on projects with Python, SQL, Excel, and Tableau.",
       "Performed end-to-end workflows: data cleaning, EDA, visualization, dashboarding, and insight presentation.",
@@ -577,13 +589,23 @@ export default function App() {
                 </span>
               </div>
 
-              <div className="mt-4">
-                <h3 className="font-display text-xl font-semibold tracking-tight">
-                  {exp.org}
-                </h3>
-                <p className="mt-1 text-sm font-medium text-accent">
-                  {exp.role}
-                </p>
+              <div className="mt-4 flex items-start gap-4">
+                {exp.logo && (
+                  <img
+                    src={exp.logo}
+                    alt={`${exp.org} logo`}
+                    className="h-12 w-12 shrink-0 rounded-xl border border-line bg-white object-contain p-1 sm:h-14 sm:w-14"
+                    loading="lazy"
+                  />
+                )}
+                <div>
+                  <h3 className="font-display text-xl font-semibold tracking-tight">
+                    {exp.org}
+                  </h3>
+                  <p className="mt-1 text-sm font-medium text-accent">
+                    {exp.role}
+                  </p>
+                </div>
               </div>
 
               <ul className="mt-4 max-w-3xl space-y-2.5">
